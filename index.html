@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cebza's Technical Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: peachpuff;
+    }
+     h3{
+        text-align: center;
+        color: red;
+        font-family: impact;
+        font-size: 20px;
+     }
+
+    #top-navbar {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #top-navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    #navbar {
+      width: 200px;
+      position: fixed;
+      top: 50px;
+      left: 0;
+      height: 100%;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+    }
+
+    #navbar header {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .nav-link {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+
+    #main-doc {
+      margin-left: 220px;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    .main-section {
+      margin-bottom: 40px;
+      padding: 50px;
+      
+    }
+
+    .main-section header {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    code {
+      display: block;
+      background-color: #f4f4f4;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    #welcome {
+      display: block;
+    }
+
+    #project-list {
+      display: none;
+    }
+     /* Nav Styling */
+    #top-navbar {
+      display: flex;
+      justify-content: center;
+      background-color: hsl(211, 100%, 50%);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    #top-navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    #top-navbar ul li {
+      display: inline;
+    }
+
+    #top-navbar ul li a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    #top-navbar ul li a:hover {
+      background-color: #1c032c;
+      color: white;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+
+    /* Media Query */
+    @media (max-width: 600px) {
+      #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+      }
+      #navbar ul li a:hover {
+      background-color: #1c032c;
+      color: white;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+      #main-doc {
+        margin-left: 0;
+      }
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    header {
+      font-weight: bold;
+      font-family: impact;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project img {
+      max-width: 100%;
+      height: auto;
+    }
+    button{
+        margin: 10px;
+        margin-left: 250px;
+        margin-right:10px;
+        padding: 10px;
+        font-size: 16px;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #1c032c;
+        color: white;
+        cursor: pointer;
+        width: 100px;
+
+    }
+    button:hover{
+        background-color: aqua;
+    }
+    .social-icon img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        transition: transform 0.3s;
+        margin: 10px auto;
+        padding: 5px;
+    }
+    .social-icon img:hover{
+        transform: scale(1.1);
+    }
+    .logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        margin: 10px auto;
+        padding: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav id="top-navbar">
+    <img src="logo.png" alt="Logo" class="logo">
+    <ul>
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <nav id="navbar">
+    <h3 style="color: rgb(243, 13, 13);">Projects</h3>
+    <a class="nav-link" href="#Wind_Turbine">Wind Turbine</a>
+    <a class="nav-link" href="#Contactless_Temperature">Contactless Temperature Screening System</a>
+    <a class="nav-link" href="#Vehicle_Tracking">Innovative Vehicle Tracking System</a>
+    <a class="nav-link" href="#Weather_App">Weather App</a>
+    <a class="nav-link" href="#Passenger_Counter">Passenger Counter App</a>
+    <a class="nav-link" href="#Circuits_Calculator">Electrical Circuits Calculator App</a>
+    <a class="nav-link" href="#Patient_Monitoring">Patient Monitoring System</a>
+    <a class="nav-link" href="#JS_Documentation">JavaScript Technical Documentation</a>
+  </nav>
+
+  <main id="main-doc">
+    <section id="welcome" class="main-section">
+      <header>Welcome</header>
+      <p>Hello, I am KHULEKANI CEBEKHULU, an electrical engineering graduate.</p>
+      <button id="next-button">Next <span>&rarr;</span></button>
+    </section>
+
+    <section id="project-list" class="main-section">
+        
+      <button id="back-button"><span>&larr;</span> Back</button>
+      <h3>This is my projects I design and develop.</h3>
+      <div id="Wind_Turbine" class="project">
+        <header>1.Wind Turbine</header>
+        <p>Renewable energy project using wind power.</p>
+        <img src="coolingfananim.PNG" alt="Wind Turbine">
+      </div>
+      <div id="Contactless_Temperature" class="project">
+        <header>2.Contactless Temperature Screening System</header>
+        <p>A system for measuring temperature without contact.</p>
+        <img src="waterlevel.PNG" alt="Contactless Temperature Screening System">
+      </div>
+      <div id="Vehicle_Tracking" class="project">
+        <header>3.Innovative Vehicle Tracking System</header>
+        <p>A system for real-time vehicle tracking.</p>
+        <img src="pump.PNG" alt="Innovative Vehicle Tracking System">
+      </div>
+      <div id="Weather_App" class="project">
+        <header>3.Weather App</header>
+        <p>An application displaying weather data.</p>
+        <img src="weatherapp.PNG" alt="Weather App">
+      </div>
+      <div id="Passenger_Counter" class="project">
+        <header>4.Passenger Counter App</header>
+        <p>An app for counting passengers in public transport.</p>
+        <img src="passangercount.PNG" alt="Passenger Counter App">
+      </div>
+      <div id="Circuits_Calculator" class="project">
+        <header>5.Electrical Circuits Calculator App</header>
+        <p>An app to calculate electrical circuit parameters.</p>
+        <img src="path_to_circuits_calculator_image.jpg" alt="Electrical Circuits Calculator App">
+      </div>
+      <div id="Patient_Monitoring" class="project">
+        <header>6.Patient Monitoring System</header>
+        <p>A system for monitoring patient vitals remotely.</p>
+        <img src="Patient.jpg" alt="Patient Monitoring System">
+      </div>
+      <div id="JS_Documentation" class="project">
+        <header>7.JavaScript Technical Documentation</header>
+        <p>Technical documentation for JavaScript.</p>
+        <img src="cssmaker.PNG" alt="JavaScript Technical Documentation">
+      </div>
+    </section>
+
+    <section id="contact" class="main-section contact-info">
+      <header>Contact Me</header>
+      <p>Email: khulekanikhethanic@gmail.com</p>
+      <p>Phone: 076 299 2174</p>
+      <a href="https://facebook.com/khulekan Cebekhulu" target="_blank" class="social-icon">
+        <img src="Facebook.png" alt="Facebook">
+      </a>
+      <a href="https://linkedin.com/khulekan Cebekhulu" target="_blank" class="social-icon">
+        <img src="linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://WhatsApp.com/khulekan Cebekhulu" target="_blank" class="social-icon">
+        <img src="WhatsApp.png" alt="Whatsapp">
+      </a>
+      <a href="https://khulekanikhethanic@gmail.com" target="_blank" class="social-icon">
+        <img src="Gmail.png" alt="gmail">
+      </a>
+
+    </section>
+  </main>
+
+  <footer>
+    Created by Khulekani Cebekhulu, Electrical Engineering Graduate
+  </footer>
+
+  <script>
+    document.getElementById('next-button').addEventListener('click', function () {
+      document.getElementById('welcome').style.display = 'none';
+      document.getElementById('project-list').style.display = 'block';
+    });
+
+    document.getElementById('back-button').addEventListener('click', function () {
+      document.getElementById('project-list').style.display = 'none';
+      document.getElementById('welcome').style.display = 'block';
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
