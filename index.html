@@ -132,6 +132,7 @@
       color: white;
       cursor: pointer;
       text-decoration: underline;
+      border-radius: 5px;
     }
 
 
@@ -141,6 +142,7 @@
         position: relative;
         width: 100%;
         height: auto;
+        overflow: scroll;
       }
       #navbar ul li a:hover {
       background-color: #1c032c;
@@ -234,7 +236,9 @@
     <ul>
       <li><a href="#welcome">Welcome</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Hire me</a></li>
     </ul>
   </nav>
 
@@ -251,14 +255,30 @@
     <a class="nav-link" href="#CSS_Colormaker">9.CSS Color Maker</a>
     <a class="nav-link" href="#water_level">10.Water level indicator</a>
     <a class="nav-link" href="#survey_form">11.Survey Form</a>
+    <a class="nav-link" href="#Mining_system">12.Mining Workers Health monitoring system</a>
+    <a class="nav-link" href="#weather_dashboard">11.Advanced Weather Dashboard</a>
   </nav>
 
   <main id="main-doc">
     <section id="welcome" class="main-section">
       <header>Welcome</header>
-      <p>Hello, I am KHULEKANI CEBEKHULU, an electrical engineering graduate.</p>
+      <p>Hello, I am KHULEKANI CEBEKHULU, an electrical engineering graduate.</p> <p>As a recent electrical engineering graduate, I am eager to
+         apply my theoretical knowledge and practical skills to contribute to engineering projects that drive innovation and solve real-world
+        challenges. 
+      </p>
       <button id="next-button">Next <span>&rarr;</span></button>
       <img src="Graduate.JPG" alt="Contactless Temperature Screening System" style="width:200px">
+    </section>
+    <section id="skills" class="main-section">
+      <header>Key Skills</header>
+      <ul>
+      <li>Computer Literacy</li>
+      <li>Web design</li>
+      <li>Teamwork and communication</li>
+      <li>Problem solving and analytical skills</li>
+      <li>Leadership and time management skills</li>
+      <li>Software(Home Grid)</li>
+    </ul>
     </section>
 
     <section id="project-list" class="main-section">
@@ -328,6 +348,20 @@
         <img src="Survey form.jpg" alt="water level" style="width: 300px;">
       </div>
 
+      <div id="Mining_system" class="project">
+        <header>12.Mining Workers Monitoring System</header>
+        <p>Advance system to monitor the health of mine workers in real-time.</p>
+        <img src="mineworkersimage.PNG" alt="water level">
+      </div>
+
+      <div id="weather_dashboard" class="project">
+        <header>13.Weather Dashboard app</header>
+        <p>Advance weather application to provide current weather data update in real-time.</p>
+        <img src="Sign.jpg" alt="water level" style="width: 300px;">
+        <img src="Display.jpg" alt="water level" style="width: 300px;">
+        <img src="Forecast.jpg" alt="water level" style="width: 300px;">
+      </div>
+
 
     </section>
 
@@ -359,11 +393,13 @@
     document.getElementById('next-button').addEventListener('click', function () {
       document.getElementById('welcome').style.display = 'none';
       document.getElementById('project-list').style.display = 'block';
+       document.getElementById('skills').style.display = 'none';
     });
 
     document.getElementById('back-button').addEventListener('click', function () {
       document.getElementById('project-list').style.display = 'none';
       document.getElementById('welcome').style.display = 'block';
+       document.getElementById('skills').style.display = 'block';
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
