@@ -18,8 +18,9 @@
      h3{
         text-align: center;
         color: red;
-        font-family: impact;
+        text-transform: uppercase;
         font-size: 20px;
+        text-decoration: underline;
      }
 
     #top-navbar {
@@ -34,7 +35,7 @@
     #top-navbar a {
       color: white;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 10px;
     }
 
     #navbar {
@@ -163,7 +164,7 @@
 
     header {
       font-weight: bold;
-      font-family: impact;
+      text-transform: uppercase;
     }
 
     footer {
@@ -222,9 +223,61 @@
         left: 0;
         width: 30px;
         height: 30px;
-        margin: 10px 10px;
+        margin: 10px auto;
         padding: 5px;
     }
+
+    .switch {
+            position: fixed;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-left: 250px;
+            margin-right:10px;
+            margin-bottom: 20px;
+            
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .toggle{
+          padding: 10px;
+        }
 
   </style>
 </head>
@@ -235,7 +288,7 @@
     <img src="logo.png" alt="Logo" class="logo">
     <ul>
       <li><a href="#welcome">Welcome</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a id="projectheading" href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#contact">Hire me</a></li>
@@ -260,20 +313,29 @@
   </nav>
 
   <main id="main-doc">
+    <div class="toggle">
+      <label class="switch">
+          <input type="checkbox" id="toggleSwitch">
+          <span class="slider"></span>
+          <h4>Toggle Light/Dark Mode</h4>
+      </label>
+      
+  </div>
     <section id="welcome" class="main-section">
       <header>Welcome</header>
-      <p>Hello, I am KHULEKANI CEBEKHULU, an electrical engineering graduate.</p> <p>As a recent electrical engineering graduate, I am eager to
+      <p>Hello, I am <span style="color: orangered; font-weight: bolder; text-transform: uppercase;">KHULEKANI CEBEKHULU</span>, an electrical engineering graduate.</p> <p>As a recent electrical engineering graduate, I am eager to
          apply my theoretical knowledge and practical skills to contribute to engineering projects that drive innovation and solve real-world
         challenges. 
       </p>
       <button id="next-button">Next <span>&rarr;</span></button>
       <img src="Graduate.JPG" alt="Contactless Temperature Screening System" style="width:200px">
     </section>
+
     <section id="skills" class="main-section">
       <header>Key Skills</header>
       <ul>
       <li>Computer Literacy</li>
-      <li>Web design</li>
+      <li>Web development</li>
       <li>Teamwork and communication</li>
       <li>Problem solving and analytical skills</li>
       <li>Leadership and time management skills</li>
@@ -345,21 +407,21 @@
       <div id="survey_form" class="project">
         <header>11.Survey Form</header>
         <p>Survey Form Web page.</p>
-        <img src="Survey form.jpg" alt="water level" style="width: 300px;">
+        <img src="Survey form.jpg" alt="survey" style="width: 300px;">
       </div>
 
       <div id="Mining_system" class="project">
         <header>12.Mining Workers Monitoring System</header>
         <p>Advance system to monitor the health of mine workers in real-time.</p>
-        <img src="mineworkersimage.PNG" alt="water level">
+        <img src="mineworkersimage.PNG" alt="minesystem">
       </div>
 
       <div id="weather_dashboard" class="project">
         <header>13.Weather Dashboard app</header>
         <p>Advance weather application to provide current weather data update in real-time.</p>
-        <img src="Sign.jpg" alt="water level" style="width: 300px;">
-        <img src="Display.jpg" alt="water level" style="width: 300px;">
-        <img src="Forecast.jpg" alt="water level" style="width: 300px;">
+        <img src="Sign.jpg" alt="sign" style="width: 300px;">
+        <img src="Display.jpg" alt="DashboardDisplay" style="width: 300px;">
+        <img src="Forecast.jpg" alt="Forecast" style="width: 300px;">
       </div>
 
 
@@ -386,10 +448,36 @@
   </main>
 
   <footer>
-    Created by Khulekani Cebekhulu, Electrical Engineering Graduate
+    Developed by Khulekani Cebekhulu, Electrical Engineering Graduate
   </footer>
 
   <script>
+    const navbar = document.getElementById('navbar');
+    const projectHeadings = document.getElementById('projectheading');
+    let isProjectTitleDisplayed = true;
+    projectHeadings.addEventListener('click', (e) => {
+      e.preventDefault();
+      if(isProjectTitleDisplayed){
+        navbar.style.display = 'none';
+      }else{
+        navbar.style.display = 'block';
+      }
+      isProjectTitleDisplayed =!isProjectTitleDisplayed;
+    });
+    
+
+    const toggleSwitch = document.getElementById('toggleSwitch');
+        
+        toggleSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+            } else {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+            }
+        });
+
     document.getElementById('next-button').addEventListener('click', function () {
       document.getElementById('welcome').style.display = 'none';
       document.getElementById('project-list').style.display = 'block';
