@@ -68,7 +68,7 @@
     }
 
     .main-section {
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       padding: 50px;
       
     }
@@ -279,6 +279,36 @@
           padding: 10px;
         }
 
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            text-align: center;
+            color: black;
+        }
+
+        .skills .skill {
+            background: #887777;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills .skill i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #00aaff;
+        }
+
+
   </style>
 </head>
 
@@ -328,7 +358,7 @@
         challenges. 
       </p>
       <button id="next-button">Next <span>&rarr;</span></button>
-      <img src="Graduate.JPG" alt="Contactless Temperature Screening System" style="width:200px">
+      <img src="Graduate.JPG" alt="Profile Picture" style="width:200px">
     </section>
 
     <section id="skills" class="main-section">
@@ -342,6 +372,26 @@
       <li>Software(Home Grid)</li>
     </ul>
     </section>
+
+    <section id="skills2" class="main-section">
+      <div class="skills">
+          <div class="skill">
+              <i class="fas fa-microchip"></i>
+              <header>Embedded Systems</header>
+              <p>Proficient in designing and implementing microcontroller-based systems using C and C++ language.</p>
+          </div>
+          <div class="skill">
+              <i class="fas fa-code"></i>
+              <header>Web Development</header>
+              <p>Experienced in HTML, CSS, JavaScript, and Python for web applications.</p>
+          </div>
+          <div class="skill">
+              <i class="fas fa-bolt"></i>
+              <header>Electrical Design</header>
+              <p>Skilled in creating and testing electrical circuits and systems.</p>
+          </div>
+      </div>
+  </section>
 
     <section id="project-list" class="main-section">
         
@@ -482,12 +532,14 @@
       document.getElementById('welcome').style.display = 'none';
       document.getElementById('project-list').style.display = 'block';
        document.getElementById('skills').style.display = 'none';
+       document.getElementById('skills2').style.display = 'none';
     });
 
     document.getElementById('back-button').addEventListener('click', function () {
       document.getElementById('project-list').style.display = 'none';
       document.getElementById('welcome').style.display = 'block';
        document.getElementById('skills').style.display = 'block';
+       document.getElementById('skills2').style.display = 'block';
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
