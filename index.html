@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cebza's  Portfolio </title>
   <link rel="icon" href="Graduate.JPG" type="image/jpg">
+  
+      <!-- Google Fonts for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +21,7 @@
     }
      h3{
         text-align: center;
-        color: red;
+        color: rgb(12, 54, 102);
         text-transform: uppercase;
         font-size: 20px;
         text-decoration: underline;
@@ -308,7 +312,97 @@
             color: #00aaff;
         }
 
+        .section-content {
+      margin-bottom: 40px;
+    }
+   
 
+    /* vts styling start */
+
+    .h3 {
+      font-size: 1rem;
+      color: #007BFF;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .h3:hover {
+      color: #0056b3;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .architecture-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    pre {
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+
+    code {
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Video Styling */
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    video {
+      width: 48%;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .h2 {
+        font-size: 1.8rem;
+      }
+
+      .h3 {
+        font-size: 1.2rem;
+      }
+
+      video {
+        width: 100%;
+      }
+    }
+    /* vts styling ends */
+
+     /* cooling fan  styling starts */
+
+     /* cooling fan  styling ends */
+
+     /* contactles temperature screening styling starts */
+     
+     /* contactles temperature screening styling ends */
   </style>
 </head>
 
@@ -391,7 +485,7 @@
               <p>Skilled in creating and testing electrical circuits and systems.</p>
           </div>
       </div>
-      <br> <br>
+        <br> <br>
       <p>Please click "Next" button to view my projects</p>
   </section>
 
@@ -402,14 +496,172 @@
 
       <div id="Vehicle_Tracking" class="project">
         <header>1.Innovative Vehicle Tracking System</header>
-        <p>A system for real-time vehicle tracking.</p>
         <img src="Vts1.png" alt="Innovative Vehicle Tracking System" style="width:250px">
       </div>
+
+        <!-- Vts start here -->
+      <div class="container">
+
+        <!-- Project Overview -->
+        <div class="section-content">
+          <h3 class="h3">Project Overview</h3>
+          <p>
+            The Innovative Vehicle Tracking System enhances vehicle security by tracking real-time location using GPS, GSM, and LoRa technologies. The system provides seamless monitoring and geofencing capabilities, making it ideal for both personal vehicle security and fleet management solutions.
+          </p>
+        </div>
+    
+        <!-- Technologies Used -->
+        <div class="section-content">
+          <h3 class="h3">Technologies Used</h3>
+          <ul>
+            <li>ATMEGA328P and ESP32 Microcontroller</li>
+            <li>Neo-8M GPS Module</li>
+            <li>GSM Module for communication</li>
+            <li>LoRa Module for long-range, low-network areas</li>
+            <li>Programming Languages: C, C++ and JavaScript</li>
+            <li>Proteus for simulation</li>
+            <li>Google Maps API for location display</li>
+          </ul>
+        </div>
+    
+        <!-- System Architecture -->
+        <div class="section-content">
+          <h3 class="h3">System Architecture</h3>
+          <img src="architecture-diagram.png" alt="System Architecture" class="architecture-image">
+          <p>
+            The system integrates GPS, GSM, and LoRa modules, allowing dual-layer communication for long-range tracking. In areas where GSM coverage is poor, the system seamlessly switches to LoRa to ensure uninterrupted location monitoring.
+          </p>
+        </div>
+    
+        <!-- Challenges and Solutions -->
+        <div class="section-content">
+          <h3 class="h3">Challenges and Solutions</h3>
+          <p>
+            The main challenge was ensuring reliable communication in low-network areas. By integrating LoRa, a long-range, low-power communication system, the project achieved reliable data transmission over several kilometers, even in rural areas.
+          </p>
+        </div>
+    
+        <!-- Testing and Validation -->
+        <div class="section-content">
+          <h3 class="h3">Testing and Validation</h3>
+          <p>
+            The system was tested across various environments to ensure reliability. It consistently provided location accuracy within 5 meters and had a GSM response time of under 10 seconds. LoRa extended the communication range, ensuring coverage in low-network areas.
+          </p>
+        </div>
+    
+        <!-- Impact and Future Improvements -->
+        <div class="section-content">
+          <h3 class="h3">Impact and Future Improvements</h3>
+          <p>
+            The system offers great potential in the automotive industry, particularly in fleet management and rural applications. Future improvements include integrating a mobile app for user-friendly tracking and adding advanced features like theft detection and emergency alerts.
+          </p>
+        </div>
+    
+        <!-- Code Snippet -->
+        <div class="section-content">
+          <h3 class="h3">Code Snippet</h3>
+          <pre id="codesnippet"><code>
+                // Function to retrieve GPS data
+                function getGpsLocation() {
+                const latitude = getLatitude();
+                const longitude = getLongitude();
+                return { latitude, longitude };
+                }
+    
+                // Example of using LoRa for communication
+                function sendViaLoRa(data) {
+                LoRa.beginPacket();
+                LoRa.print(data);
+                LoRa.endPacket();
+                }
+          </code></pre>
+        </div>
+    
+        <!-- Video Section -->
+        <div class="section-content">
+          <h3 class="h3">System Functionality Demo</h3>
+          <div class="video-section">
+            <!-- Replace with actual video paths -->
+            <video controls>
+              <source src="Vtsvideo2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <video controls>
+              <source src="Vtsvideo1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+    
+      </div>
+      <!-- Vts end here -->
+
+      <!-- cooling fan speed control start here -->
+
       <div id="Wind_Turbine" class="project">
         <header>2.Cooling Fan Speed Control</header>
-        <p>Manual Cooling Fan Speed Control app.</p>
         <img src="coolingfananim.PNG" alt="coooling fan">
       </div>
+
+      <div class="container">
+        <!-- Project Overview -->
+        <div class="section-content">
+          <h3 class="h3">Project Overview</h3>
+          <p>
+            The Cooling Fan Speed Control App allows users to regulate the fan's speed based on ambient temperature or manual input through a mobile interface. This project aims to enhance energy efficiency by dynamically adjusting fan speed based on real-time temperature readings.
+          </p>
+        </div>
+    
+        <!-- Key Features -->
+        <div class="section-content">
+          <h3 class="h3">Key Features</h3>
+          <ul>
+            <li>Real-time temperature monitoring using a DHT11/DHT22 sensor.</li>
+            <li>Fan speed adjustment through PWM (Pulse Width Modulation).</li>
+            <li>User-friendly mobile app interface for manual control.</li>
+            <li>Automatic fan speed adjustment based on pre-set temperature thresholds.</li>
+            <li>Low power consumption mode to enhance energy efficiency.</li>
+          </ul>
+        </div>
+    
+        <!-- Technologies Used -->
+        <div class="section-content">
+          <h3 class="h3">Technologies Used</h3>
+          <ul>
+            <li>ESP32 Microcontroller</li>
+            <li>PWM for controlling fan speed</li>
+            <li>Mobile App Interface </li>
+            <li>Temperature Sensor (DHT11 or DHT22)</li>
+            <li>Programming Languages: C, C++ and JavaScript</li>
+          </ul>
+        </div>
+    
+        <!-- Code Snippet (Partial) -->
+        <div class="section-content">
+          <h3 class="h3">Code Snippet</h3>
+          <pre id="codesnippet"><code>
+    // Function to control fan speed using PWM
+    int fanPin = 5; // Pin connected to fan
+    int tempPin = DHT11_PIN; // Pin connected to temperature sensor
+    
+    void setup() {
+      pinMode(fanPin, OUTPUT);
+      dht.begin();
+    }
+    
+    void loop() {
+      float temperature = dht.readTemperature();
+      int pwmValue = map(temperature, 20, 40, 0, 255); // Adjust PWM based on temperature
+      analogWrite(fanPin, pwmValue);
+      delay(1000);
+    }
+          </code></pre>
+        </div>
+    
+      </div>
+       <!-- cooling fan speed control ends here -->
+        
+       <!-- contactles speed control start here -->
       <div id="Contactless_Temperature" class="project">
         <header>3.Contactless Temperature Screening System</header>
         <p>A system for measuring temperature without contact.</p>
@@ -417,6 +669,100 @@
         <p>Final Product.</p>
         <img src="System developer.jpg" alt="Contactless Temperature Screening System" style="width:300px">
       </div>
+
+      
+
+  <div class="container">
+      <!-- Project Overview -->
+      <div class="section-content">
+        <h3 class="h3">Project Overview</h3>
+        <p>
+          The Contactless Temperature Screening System is designed to measure an individual’s body temperature without physical contact. This system provides an efficient solution for public places, ensuring safety during pandemic scenarios. The device uses an infrared sensor to capture temperature readings and displays them on an LCD screen.
+        </p>
+      </div>
+  
+      <!-- Technologies Used -->
+      <div class="section-content">
+        <h3 class="h3">Technologies Used</h3>
+        <ul>
+          <li>ESP32 Microcontroller</li>
+          <li>MLX90614 Infrared Temperature Sensor</li>
+          <li>LCD Display for output</li>
+          <li>Programming Languages: C, C++</li>
+          <li>Proteus for simulation</li>
+        </ul>
+      </div>
+  
+      <!-- System Architecture -->
+      <div class="section-content">
+        <h3 class="h3">System Architecture</h3>
+        <img src="architecture-diagram-temp-system.png" alt="System Architecture" class="architecture-image">
+        <p>
+          The system architecture integrates the MLX90614 infrared sensor with an ESP32 microcontroller to process temperature readings and display them on an LCD. The diagram shows how each component interacts to ensure smooth operation.
+        </p>
+      </div>
+  
+      <!-- Challenges and Solutions -->
+      <div class="section-content">
+        <h3 class="h3">Challenges and Solutions</h3>
+        <p>
+          One of the primary challenges was ensuring that the temperature readings were accurate at varying distances. By fine-tuning the sensor and calibrating the system, accurate readings were achieved within a range of 5-10 cm.
+        </p>
+      </div>
+  
+      <!-- Project Duration -->
+      <div class="section-content">
+        <h3 class="h3">Project Duration</h3>
+        <p>
+          This project took approximately **3 month** to complete, including the research, development, and testing phases.
+        </p>
+      </div>
+  
+      <!-- Code Snippet -->
+      <div class="section-content">
+        <h3 class="h3">Code Snippet</h3>
+        <pre id="codesnippet"><code>
+  // Function to read temperature from MLX90614
+  #include <Wire.h>
+  #include <Adafruit_MLX90614.h>
+  
+  Adafruit_MLX90614 mlx = Adafruit_MLX90614();
+  
+  void setup() {
+    Serial.begin(9600);
+    mlx.begin();
+  }
+  
+  void loop() {
+    float temp = mlx.readObjectTempC();
+    Serial.print("Temperature: ");
+    Serial.print(temp);
+    Serial.println(" *C");
+  
+    delay(1000); // Read temperature every second
+  }
+        </code></pre>
+      </div>
+      <div class="section-content">
+        <h3 class="h3">Final Product</h3>
+        <img src="System developer.jpg" alt="Contactless Temperature Screening System" style="width:300px">
+      </div>
+
+      <!-- Video Section -->
+      <div class="section-content">
+        <h3 class="h3">System Functionality Demo</h3>
+        <div class="video-section">
+          <!-- Replace with actual video paths -->
+          <video controls>
+            <source src="Tempvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+  
+    </div>
+  
+      <!-- contactles speed control ends here -->
       
       <div id="Weather_App" class="project">
         <header>4.Weather App</header>
@@ -506,6 +852,7 @@
   <script>
     const navbar = document.getElementById('navbar');
     const projectHeadings = document.getElementById('projectheading');
+    const codesnippet = document.getElementById('codesnippet');
     let isProjectTitleDisplayed = true;
     projectHeadings.addEventListener('click', (e) => {
       e.preventDefault();
@@ -524,9 +871,11 @@
             if (this.checked) {
                 document.body.style.backgroundColor = 'black';
                 document.body.style.color = 'white';
+                codesnippet.style.color = 'black';
             } else {
                 document.body.style.backgroundColor = 'white';
                 document.body.style.color = 'black';
+
             }
         });
 
