@@ -101,17 +101,18 @@
     #project-list {
       display: none;
     }
+    
      /* Nav Styling */
-    #top-navbar {
+      #top-navbar {
       display: flex;
       justify-content: center;
-      background-color: hsl(211, 100%, 50%);
+      background-color: green;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
     }
-
+     
     #top-navbar ul {
       list-style-type: none;
       margin: 0;
@@ -139,6 +140,7 @@
       text-decoration: underline;
       border-radius: 5px;
     }
+  
 
 
     /* Media Query */
@@ -346,7 +348,7 @@
       margin-bottom: 10px;
     }
 
-    .architecture-image {
+    .Circuit-image {
       max-width: 100%;
       height: auto;
       display: block;
@@ -394,15 +396,39 @@
         width: 100%;
       }
     }
-    /* vts styling ends */
+    
 
-     /* cooling fan  styling starts */
+     /* resume styling starts */
+      
 
-     /* cooling fan  styling ends */
+     .resume-section {
+            margin-bottom: 40px;
+            margin-top: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-     /* contactles temperature screening styling starts */
-     
-     /* contactles temperature screening styling ends */
+        .resume {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #f0f8ff;
+            border: 1px solid #0056b3;
+            transition: background-color 0.3s, color 0.3s;
+            
+        }
+
+        .resume:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+     /* resume styling ends */
+
   </style>
 </head>
 
@@ -485,6 +511,16 @@
               <p>Skilled in creating and testing electrical circuits and systems.</p>
           </div>
       </div>
+    
+        <!-- Downloadable Resume Section -->
+      <div class="resume-section">
+          <h2>Download My Resume</h2>
+          <p>You can download my resume to learn more about my qualifications and experience. Click the button below to access the PDF file:</p>
+          <a class="resume" href="Cebekhulu CV.pdf" target="_blank" download="Cebekhulu CV.pdf">
+              Download Resume (PDF)
+          </a>
+      </div>
+
         <br> <br>
       <p>Please click "Next" button to view my projects</p>
   </section>
@@ -521,13 +557,14 @@
             <li>Programming Languages: C, C++ and JavaScript</li>
             <li>Proteus for simulation</li>
             <li>Google Maps API for location display</li>
+            <li>Atmel studio 7</li>
           </ul>
         </div>
     
-        <!-- System Architecture -->
+        <!-- System Circuit -->
         <div class="section-content">
-          <h3 class="h3">System Architecture</h3>
-          <img src="architecture-diagram.png" alt="System Architecture" class="architecture-image">
+          <h3 class="h3">System Circuit</h3>
+          <img src="systemcircuit.PNG" alt="System Circuit" class="Circuit-image">
           <p>
             The system integrates GPS, GSM, and LoRa modules, allowing dual-layer communication for long-range tracking. In areas where GSM coverage is poor, the system seamlessly switches to LoRa to ensure uninterrupted location monitoring.
           </p>
@@ -556,27 +593,17 @@
             The system offers great potential in the automotive industry, particularly in fleet management and rural applications. Future improvements include integrating a mobile app for user-friendly tracking and adding advanced features like theft detection and emergency alerts.
           </p>
         </div>
+
+        <!-- Project Duration -->
+      <div class="section-content">
+        <h3 class="h3">Project Duration</h3>
+        <p>
+          This project took approximately **6 month** to complete, including the research, development,testing and presentation phases.
+        </p>
+      </div>
     
         <!-- Code Snippet -->
-        <div class="section-content">
-          <h3 class="h3">Code Snippet</h3>
-          <pre id="codesnippet"><code>
-                // Function to retrieve GPS data
-                function getGpsLocation() {
-                const latitude = getLatitude();
-                const longitude = getLongitude();
-                return { latitude, longitude };
-                }
-    
-                // Example of using LoRa for communication
-                function sendViaLoRa(data) {
-                LoRa.beginPacket();
-                LoRa.print(data);
-                LoRa.endPacket();
-                }
-          </code></pre>
-        </div>
-    
+
         <!-- Video Section -->
         <div class="section-content">
           <h3 class="h3">System Functionality Demo</h3>
@@ -616,12 +643,17 @@
         <div class="section-content">
           <h3 class="h3">Key Features</h3>
           <ul>
-            <li>Real-time temperature monitoring using a DHT11/DHT22 sensor.</li>
+            <li>Real-time temperature monitoring using a DHT22 sensor.</li>
             <li>Fan speed adjustment through PWM (Pulse Width Modulation).</li>
             <li>User-friendly mobile app interface for manual control.</li>
             <li>Automatic fan speed adjustment based on pre-set temperature thresholds.</li>
             <li>Low power consumption mode to enhance energy efficiency.</li>
           </ul>
+
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Cooling-fan-speed-control-/" target="_blank">View on Link</a>
+          </div>
         </div>
     
         <!-- Technologies Used -->
@@ -631,34 +663,14 @@
             <li>ESP32 Microcontroller</li>
             <li>PWM for controlling fan speed</li>
             <li>Mobile App Interface </li>
-            <li>Temperature Sensor (DHT11 or DHT22)</li>
+            <li>Temperature Sensor (Dallas sensor)</li>
             <li>Programming Languages: C, C++ and JavaScript</li>
+            <li>Arduino IDE</li>
           </ul>
         </div>
     
         <!-- Code Snippet (Partial) -->
-        <div class="section-content">
-          <h3 class="h3">Code Snippet</h3>
-          <pre id="codesnippet"><code>
-    // Function to control fan speed using PWM
-    int fanPin = 5; // Pin connected to fan
-    int tempPin = DHT11_PIN; // Pin connected to temperature sensor
-    
-    void setup() {
-      pinMode(fanPin, OUTPUT);
-      dht.begin();
-    }
-    
-    void loop() {
-      float temperature = dht.readTemperature();
-      int pwmValue = map(temperature, 20, 40, 0, 255); // Adjust PWM based on temperature
-      analogWrite(fanPin, pwmValue);
-      delay(1000);
-    }
-          </code></pre>
-        </div>
-    
-      </div>
+       
        <!-- cooling fan speed control ends here -->
         
        <!-- contactles speed control start here -->
@@ -666,8 +678,6 @@
         <header>3.Contactless Temperature Screening System</header>
         <p>A system for measuring temperature without contact.</p>
         <img src="Temp screening.png" alt="Contactless Temperature Screening System" style="width:300px">
-        <p>Final Product.</p>
-        <img src="System developer.jpg" alt="Contactless Temperature Screening System" style="width:300px">
       </div>
 
       
@@ -693,12 +703,12 @@
         </ul>
       </div>
   
-      <!-- System Architecture -->
+      <!-- System Circuit -->
       <div class="section-content">
-        <h3 class="h3">System Architecture</h3>
-        <img src="architecture-diagram-temp-system.png" alt="System Architecture" class="architecture-image">
+        <h3 class="h3">System Circuit</h3>
+        <img src="circuit22.PNG" alt="System Circuit" class="Circuit-image">
         <p>
-          The system architecture integrates the MLX90614 infrared sensor with an ESP32 microcontroller to process temperature readings and display them on an LCD. The diagram shows how each component interacts to ensure smooth operation.
+          The system Circuit integrates the MLX90614 infrared sensor with an ESP32 microcontroller to process temperature readings and display them on an LCD. The diagram shows how each component interacts to ensure smooth operation.
         </p>
       </div>
   
@@ -714,35 +724,11 @@
       <div class="section-content">
         <h3 class="h3">Project Duration</h3>
         <p>
-          This project took approximately **3 month** to complete, including the research, development, and testing phases.
+          This project took approximately **3 month** to complete, including the research, development, testing and presentation phases.
         </p>
       </div>
   
-      <!-- Code Snippet -->
-      <div class="section-content">
-        <h3 class="h3">Code Snippet</h3>
-        <pre id="codesnippet"><code>
-  // Function to read temperature from MLX90614
-  #include <Wire.h>
-  #include <Adafruit_MLX90614.h>
-  
-  Adafruit_MLX90614 mlx = Adafruit_MLX90614();
-  
-  void setup() {
-    Serial.begin(9600);
-    mlx.begin();
-  }
-  
-  void loop() {
-    float temp = mlx.readObjectTempC();
-    Serial.print("Temperature: ");
-    Serial.print(temp);
-    Serial.println(" *C");
-  
-    delay(1000); // Read temperature every second
-  }
-        </code></pre>
-      </div>
+      
       <div class="section-content">
         <h3 class="h3">Final Product</h3>
         <img src="System developer.jpg" alt="Contactless Temperature Screening System" style="width:300px">
@@ -762,45 +748,169 @@
   
     </div>
   
-      <!-- contactles speed control ends here -->
+      <!-- contactles temp ends here -->
       
       <div id="Weather_App" class="project">
         <header>4.Weather App</header>
-        <p>An application displaying weather data.</p>
         <img src="weatherapp.PNG" alt="Weather App">
       </div>
+     
+
+        <!-- Project 4: Weather App -->
+        <div class="project">
+
+          <p>
+              A real-time weather app that allows users to search and view the current weather for any location using the OpenWeatherMap API.
+          </p>
+          <ul>
+              <li>Real-time weather updates.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, OpenWeatherMap API</p>
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Weather-web-app/" target="_blank">View on Link</a>
+          </div>
+      </div>
+
+
       <div id="Passenger_Counter" class="project">
         <header>5.Passenger Counter App</header>
-        <p>An app for counting passengers in public transport.</p>
         <img src="passangercount.PNG" alt="Passenger Counter App">
       </div>
+      
+
+        <!-- Project 5: Passenger Counter App -->
+      <div class="project">
+          <p>
+              An app that tracks the number of passengers entering and exiting a vehicle or building, providing real-time passenger count display.
+          </p>
+          <ul>
+              <li>Real-time passenger count display.</li>
+              <li>Resettable counter for accurate counting.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong>HTML, CSS, JavaScript </p>
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/passenger-counter-/" target="_blank">View on Link</a>
+          </div>
+      </div>
+
       <div id="Circuits_Calculator" class="project">
         <header>6.Electrical Circuits Calculator App</header>
-        <p>An app to calculate electrical circuit parameters.</p>
         <img src="electricalcircuitcalculator.jpg" alt="Electrical Circuits Calculator App" style="width:250px">
       </div>
+       <!-- Project:6 Electrical Circuits Calculator App -->
+        
+        <div class="project">
+          <p>
+              A web-based app designed to help users calculate important electrical parameters like resistance, capacitance, and current for series and parallel circuits.
+          </p>
+          <ul>
+              <li>Series and parallel circuit calculations.</li>
+              <li>Easy-to-use interface for entering circuit parameters.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript and WEBINTOAPP CONVERTER</p>
+          <div class="project-links">
+
+            <!-- Downloadable apk file for functionality testing -->
+          <div class="resume-section">
+              <h2>Download apk file</h2>
+              <p>Please download apk file and install on mobile phone to test functionality. Click the button below to access the APK file:</p>
+              <a class="resume" href="Electrical Calculator.apk" target="_blank" download="Electrical Calculator.apk">
+                  Download apk (PDF)
+              </a>
+          </div>
+
+
+          </div>
+      </div>
+
+
       <div id="Patient_Monitoring" class="project">
         <header>7.Patient Monitoring System</header>
-        <p>A system for monitoring patient vitals remotely.</p>
         <img src="Patient monitoring.jpg" alt="Patient Monitoring System" style="width:250px">
       </div>
+      <!-- Project:7 Patient monitoring system -->
+        <div class="project">
+          <p>
+              A system designed to monitor patient vital signs remotely, such as heart rate and temperature, providing real-time monitoring and alerts for abnormalities.
+          </p>
+          <ul>
+              <li>Real-time data monitoring.</li>
+              <li>Alerts for abnormal vital signs.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong> ESP32, sensors(DHT22,heart beat,dallas temp), GPS, C/C++, HTML, CSS, JavaScript</p>
+          
+      </div>
+
+
+
       <div id="JS_Documentation" class="project">
         <header>8.JavaScript Technical Documentation</header>
-        <p>Technical documentation for JavaScript.</p>
         <img src="Js doc.png" alt="JavaScript Technical Documentation" style="width: 300px;">
       </div>
       
+        <!-- Project 8: JavaScript Technical Documentation -->
+        <div class="project">
+          <p>
+              A well-structured documentation page that provides a reference for common JavaScript methods and functions, designed with a fully searchable interface and collapsible sections.
+          </p>
+          <ul>
+              <li>Fully searchable interface.</li>
+              <li>Collapsible sections for easier navigation.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript</p>
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://github.com/cebzaimpisi/js-technical-documentation" target="_blank">View on Link</a>
+          </div>
+      </div>
+
+      
       <div id="CSS_Colormaker" class="project">
         <header>9.CSS Color Maker</header>
-        <p>Color Mixing.</p>
         <img src="cssmaker.PNG" alt="CSS Color Maker">
       </div>
 
+        <!-- Project 1: CSS Color Maker -->
+        <div class="project">
+            <p>
+                A web-based tool that enables users to interactively customize and generate CSS color codes. This project offers a dynamic color preview and generates Hex, RGB, and HSL color codes for web development purposes.
+            </p>
+            <ul>
+                <li>Dynamic color preview.</li>
+                <li>Hex, RGB, and HSL code generation.</li>
+                <li>User-friendly UI for color customization.</li>
+            </ul>
+            <p><strong>Technologies Used:</strong> HTML, CSS</p>
+           
+        </div>
+
+
       <div id="water_level" class="project">
-        <header>10.Water level app</header>
-        <p>Water level indicator app.</p>
+        <header>10.Water Level Indicator App</header>
         <img src="waterlevel.PNG" alt="water level">
       </div>
+      
+
+        <!-- Project 10: Water Level Indicator App -->
+        <div class="project">
+          <p>
+              This app monitors water levels in tanks and sends alerts when water levels are either too high or too low, providing an efficient solution for water management.
+          </p>
+          <ul>
+              <li>Real-time water level monitoring.</li>
+              <li>Critical level alerts.</li>
+              <li>Low-power consumption.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong>ESP32, ultrasonic sensor, C/C++</p>
+          <p><strong>Software Used:</strong>Vs code, Platformio extension</p>
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Water-level-indicator-/" target="_blank">View on Link</a>
+          </div>
+      </div>
+
 
       <div id="survey_form" class="project">
         <header>11.Survey Form</header>
@@ -810,17 +920,50 @@
 
       <div id="Mining_system" class="project">
         <header>12.Mining Workers Monitoring System</header>
-        <p>Advance system to monitor the health of mine workers in real-time.</p>
         <img src="mineworkersimage.PNG" alt="minesystem">
       </div>
+              <!-- Project 8: Mining Workers Monitoring System -->
+              <div class="project">
+                <p>
+                    A safety system that monitors the health and location of mining workers underground, providing real-time data and alerts for emergencies.
+                </p>
+                <ul>
+                    <li>Health and location tracking in real-time.</li>
+                    <li>Emergency alerts for unsafe conditions.</li>
+                </ul>
+                <p><strong>Technologies Used:</strong> ESP32, sensors(DHT22,heart beat,dallas temp), GPS, C/C++, HTML, CSS, JavaScript</p>
+                <p><strong>Software Used:</strong>Vs code, Platformio extension</p>
+                <p><strong>Cloud platform Used:</strong>Thingspeak</p>
+                <div class="project-links">
+                    <p class="github-heading">Test the functionality through this link below:</p>
+                    <a href="https://cebzaimpisi.github.io/Mining-monitoring-system-/" target="_blank">View on Link</a>
+                </div>
+            </div>
+    
 
       <div id="weather_dashboard" class="project">
-        <header>13.Weather Dashboard app</header>
-        <p>Advance weather application to provide current weather data update in real-time.</p>
+        <header>13.Advanced Weather Dashboard App</header>
         <img src="Sign.jpg" alt="sign" style="width: 300px;">
         <img src="Display.jpg" alt="DashboardDisplay" style="width: 300px;">
         <img src="Forecast.jpg" alt="Forecast" style="width: 300px;">
       </div>
+      
+        <!-- Project 9: Advanced Weather Dashboard App -->
+        <div class="project">
+          <p>
+              A detailed weather dashboard that provides real-time weather data and historical trends, using advanced charts and graphs for better visualization.
+          </p>
+          <ul>
+              <li>Real-time and historical weather data visualization.</li>
+              <li>Interactive charts and graphs for weather trends.</li>
+          </ul>
+          <p><strong>Technologies Used:</strong> HTML, CSS, JavaScript, OpenWeatherMap API</p>
+          <div class="project-links">
+              <p class="github-heading">Test the functionality through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Weather-dashboard-/" target="_blank">Advanced Weather Dashboard Web App</a>
+          </div>
+      </div>
+
 
 
     </section>
@@ -871,9 +1014,11 @@
             if (this.checked) {
                 document.body.style.backgroundColor = 'black';
                 document.body.style.color = 'white';
+                document.getElementById('top-navbar').style.backgroundColor = 'green';
                 codesnippet.style.color = 'black';
             } else {
                 document.body.style.backgroundColor = 'white';
+                document.getElementById('top-navbar').style.backgroundColor = 'purple';
                 document.body.style.color = 'black';
 
             }
