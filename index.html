@@ -9,15 +9,18 @@
   
       <!-- Google Fonts for better typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,200&display=swap');
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
-      background-color: peachpuff;
+      background-color: #0a192f;
+      color: white;
     }
      h3{
         text-align: center;
@@ -48,7 +51,7 @@
       top: 50px;
       left: 0;
       height: 100%;
-      background-color: #333;
+      background-color: rgb(13, 106, 129);
       color: white;
       padding: 20px;
     }
@@ -110,7 +113,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000;
+      z-index: 100;
     }
      
     #top-navbar ul {
@@ -128,7 +131,7 @@
       display: inline-block;
       color: white;
       text-align: center;
-      padding: 14px 16px;
+      padding: 14px 14px;
       text-decoration: none;
       font-size: 16px;
     }
@@ -138,7 +141,7 @@
       color: white;
       cursor: pointer;
       text-decoration: underline;
-      border-radius: 5px;
+      border-radius: 15px;
     }
   
 
@@ -174,7 +177,7 @@
     }
 
     footer {
-      background-color: #333;
+      background-color: green;
       color: white;
       text-align: center;
       padding: 10px;
@@ -203,15 +206,20 @@
         font-size: 16px;
         border: 2px solid black;
         border-radius: 10px;
-        background-color: #1c032c;
+        background-color: green;
         color: white;
         cursor: pointer;
         width: 100px;
+        animation: slideTop 1s ease forwards;
+        filter: drop-shadow(0px 0px 10px  black);
+        transition: .4s;
 
     }
     button:hover{
-        background-color: aqua;
+      scale:1.1;
+      filter: drop-shadow(0px 0px 7px white);
     }
+    
     .social-icon img{
         width: 30px;
         height: 30px;
@@ -285,7 +293,7 @@
           padding: 10px;
         }
 
-        .skills {
+        .Skills {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -294,7 +302,7 @@
             color: black;
         }
 
-        .skills .skill {
+        .Skills .Skill {
             background: #887777;
             border-radius: 8px;
             padding: 20px;
@@ -303,12 +311,12 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .skills .skill:hover {
+        .Skills .Skill:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .skills .skill i {
+        .Skills .Skill i {
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: #00aaff;
@@ -337,6 +345,7 @@
       margin-bottom: 20px;
       font-size: 1rem;
       line-height: 1.8;
+      
     }
 
     ul {
@@ -357,16 +366,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    pre {
-      padding: 15px;
-      border-radius: 5px;
-      overflow-x: auto;
-      font-size: 0.9rem;
-    }
-
-    code {
-      font-family: 'Courier New', Courier, monospace;
-    }
 
     /* Video Styling */
     .video-section {
@@ -428,6 +427,396 @@
         }
 
      /* resume styling ends */
+     /* ===============================HOME STYLE================= */
+
+.home{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+
+.home .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:60px;
+    margin-bottom: 120px;
+    filter: drop-shadow(0px 0px 10px white);
+    padding: 40px;
+    margin-top: 50px;
+  }
+
+  .home .image img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color:blue;
+    border: 2px solid white;
+    box-shadow: 0px 0px 10px white;
+    filter: drop-shadow(0px 0px 10px blue);
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
+  }
+
+
+  .home-content{
+    padding: 10px;
+    margin-top: 69px;
+  }
+
+  .home-content h2{
+    color: #b3a2a2;
+    font-size: 25px;
+    font-weight: bold;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+  }
+
+
+  .home-content h1{
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+  }
+  .home-content h3{
+    font-size: 32px;
+    font-weight: bold;
+    color: #b8a7a7;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s
+  }
+
+  .home-content span{
+    color: yellow;
+  }
+
+  .home-content p{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 70%;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+  }
+
+  .social-media{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    animation: slideRight 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i))
+  }
+
+  .social-media li {
+    width: 50px;
+    height: 50px;
+    background-color:rgb(10 25 47);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0px 0px 10px rgb(2, 2, 8));
+    border-radius: 50%;
+    transition: .4s;
+    animation: slideRight 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i))
+  }
+
+.social-media li:hover{
+    scale: 1.2;
+    filter: drop-shadow(0px 0px 10px white);
+}
+
+
+  .social-media li a{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i))
+  }
+
+  .button{
+    margin-top: 28px;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+  .button button{
+    font-size: 20px;
+    font-weight: bold;
+    width: 160px;
+    height: 50px;
+    background-color:green;
+    border: none;
+    outline: none;
+    margin-left: 40px;
+    border-radius: 30px;
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px  black);
+    transition: .4s;
+  }
+
+  .button button:hover{
+    scale:1.1;
+    filter: drop-shadow(0px 0px 7px white);
+  }
+
+
+  @keyframes navbar{
+    from{
+      width: 0%;
+    }
+    to{
+      width: 100%;
+    }
+  }
+
+
+
+  @media (max-width:1030px){
+    .home{
+      display: block;
+      text-align: center;
+    }
+
+    .home .home-content p{
+      width: 100%;
+    }
+
+    .home .social-media{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  /* ==============Animation Style======== */
+
+@keyframes slideRight {
+  0%{
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0%{
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  100%{
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+/* ================SKILLS STYLE========= */
+
+.skills{
+  color: #fff;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.skills{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+
+.skills-main{
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.skill-name{
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.skill-bar{
+  height: 14px;
+  background-color:#282828;
+  border-radius: 3px;
+}
+
+.skill-per{
+  height: 14px;
+  background-color:#d13639;
+  border-radius: 3px;
+  position: relative;
+  animation: fillbar 2.5s 1;
+  color: #000;
+}
+
+
+.skill-per::before{
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background-color:#fff;
+  border-radius: 4px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skill-per::after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  top: -10px;
+  right: 0;
+  transform: translateX(50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+/* =================CONTACT STYLE========== */
+
+
+.contact {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding-bottom: 80px;
+}
+
+.contact h1{
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+.message h2{
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message{
+  width: 80%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #0a192f;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  filter: drop-shadow(0px 0px 10px white);
+}
+
+form input,
+form textarea{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color:#0a192f;
+  color: #fff;
+  border: 1px solid rgb(122, 116, 116);
+}
+
+
+form input:focus,
+form textarea:focus{
+  outline: none;
+  box-shadow: 0 0 5px #333;
+}
+
+form .sending-message{
+  display: block;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(8, 180, 8);
+  margin-left: 100px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.sending-message:hover{
+  background-color: #00aaff;
+}
+header nav{
+    height: 15vh;
+    width: 80%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    gap: 5rem;
+    list-style: none;
+}
+
+header a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    
+    border-radius: .2rem;
+    padding: .5rem 1rem;
+
+    transition: .2s ease-in;
+    border-bottom: 2px solid var(--blue);
+
+    overflow: hidden;
+    position: relative;
+}
+
+header a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: .1rem;
+    z-index: -1;
+
+    transition: .2s ease-in;
+    transform: translateX(-101%);
+    background: var(--blue);
+}
+
+header a:hover::before{
+    transform: translateX(0);
+}
+
+header a:hover{
+    color: black;
+}
+
+
+         
 
   </style>
 </head>
@@ -436,17 +825,19 @@
   <!-- Navigation bar -->
   <nav id="top-navbar">
     <img src="logo.png" alt="Logo" class="logo">
+
     <ul>
       <li><a href="#welcome">Welcome</a></li>
       <li><a id="projectheading" href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#Skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#contact">Hire me</a></li>
     </ul>
   </nav>
 
+
   <nav id="navbar">
-    <h3 style="color: rgb(243, 13, 13);">Projects</h3>
+    <h3 style="color: orangered; margin-top: 40px;">Projects</h3>
     <a class="nav-link" href="#Vehicle_Tracking">1.Innovative Vehicle Tracking System</a>
     <a class="nav-link" href="#Wind_Turbine">2.Cooling Fan Speed_Control app</a>
     <a class="nav-link" href="#Contactless_Temperature">3.Contactless Temperature Screening System</a>
@@ -472,16 +863,31 @@
       
   </div>
     <section id="welcome" class="main-section">
-      <header>Welcome</header>
-      <p>Hello, I am <span style="color: orangered; font-weight: bolder; text-transform: uppercase;">KHULEKANI CEBEKHULU</span>, an electrical engineering graduate.</p> <p>As a recent electrical engineering graduate, I am eager to
-         apply my theoretical knowledge and practical skills to contribute to engineering projects that drive innovation and solve real-world
-        challenges. 
-      </p>
-      <button id="next-button">Next <span>&rarr;</span></button>
-      <img src="Graduate.JPG" alt="Profile Picture" style="width:200px">
+    <div class="home" id="home">
+        <div class="image">
+            <img src="Graduate.JPG" alt="" />
+        </div>
+        <div class="home-content">
+            <h2 style="color: orangered;">Hi</h2>
+            <h2 style="color: #00aaff;">I'am KHULEKANI CEBEKHULU</h>
+            <h2>And I'am  <span class="loop"></span></h2>
+            <p>As a recent electrical engineering graduate, I am eager to apply my theoretical knowledge and practical skills to contribute to engineering projects that drive innovation and solve real-world challenges.</p>
+            <div class="social-media">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </div>
+            <div class="button">
+                <button class="btn" onclick="hireMe()">Hire Me</button>
+            </div>
+        </div>
+        
+    </div>
+      <button class="button" id="next-button">Next <span>&rarr;</span></button>
     </section>
 
-    <section id="skills" class="main-section">
+    <section id="Skills" class="main-section">
       <header>Key Skills</header>
       <ul>
       <li>Computer Literacy</li>
@@ -494,22 +900,68 @@
     </section>
 
     <section id="skills2" class="main-section">
-      <div class="skills">
-          <div class="skill">
+      <div class="Skills">
+          <div class="Skill">
               <i class="fas fa-microchip"></i>
               <header>Embedded Systems</header>
               <p>Proficient in designing and implementing microcontroller-based systems using C and C++ language.</p>
           </div>
-          <div class="skill">
+          <div class="Skill">
               <i class="fas fa-code"></i>
               <header>Web Development</header>
               <p>Experienced in HTML, CSS, JavaScript, and Python for web applications.</p>
           </div>
-          <div class="skill">
+          <div class="Skill">
               <i class="fas fa-bolt"></i>
               <header>Electrical Design</header>
               <p>Skilled in creating and testing electrical circuits and systems.</p>
           </div>
+
+<!-- programming skills  section starts --> 
+          <div class="skills" id="skill">
+            <header>Programming Skills</header>
+            
+            <div class="skills-main">
+              <div class="skill">
+                <div class="skill-name">C</div>
+                <div class="skill-bar">
+                    <div class="skill-per" per="93%" style="max-width:93%"></div>
+                </div>
+             </div>
+             <div class="skill">
+                <div class="skill-name">C++</div>
+                <div class="skill-bar">
+                    <div class="skill-per" per="85%" style="max-width:85%"></div>
+                </div>
+             </div>
+                <div class="skill">
+                <div class="skill-name">HTML</div>
+                <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width:90%"></div>
+                </div>
+             </div>
+             <div class="skill">
+                <div class="skill-name">CSS</div>
+                <div class="skill-bar">
+                    <div class="skill-per" per="96%" style="max-width:96%"></div>
+                </div>
+             </div>
+             <div class="skill">
+                <div class="skill-name">JavaSript</div>
+                <div class="skill-bar">
+                    <div class="skill-per" per="75%" style="max-width:75%"></div>
+                </div>
+             </div>
+             <div class="skill">
+              <div class="skill-name">Python</div>
+              <div class="skill-bar">
+                  <div class="skill-per" per="45%" style="max-width:45%"></div>
+              </div>
+           </div>
+            </div>
+             
+        </div>
+        <!-- programming skills  section ends --> 
       </div>
     
         <!-- Downloadable Resume Section -->
@@ -522,13 +974,13 @@
       </div>
 
         <br> <br>
-      <p>Please click "Next" button to view my projects</p>
+      <p style="color: red;">Please click "Next" button to view my projects</p>
   </section>
 
     <section id="project-list" class="main-section">
         
       <button id="back-button"><span>&larr;</span> Back</button>
-      <h3>This is my projects I design and develop.</h3>
+      <h3 class="h3">Recent projects I design and develop.</h3>
 
       <div id="Vehicle_Tracking" class="project">
         <header>1.Innovative Vehicle Tracking System</header>
@@ -791,7 +1243,7 @@
           <p><strong>Technologies Used:</strong>HTML, CSS, JavaScript </p>
           <div class="project-links">
               <p class="github-heading">Test the functionality through this link below:</p>
-              <a href="https://cebzaimpisi.github.io/passenger-counter-/" target="_blank">View on Link</a>
+              <a href="https://passangers-counter.netlify.app/" target="_blank">View on Link</a>
           </div>
       </div>
 
@@ -969,6 +1421,20 @@
     </section>
 
     <section id="contact" class="main-section contact-info">
+
+      <div class="contact" id="contact">
+        <div class="message">
+            <h2>Send me a message</h2>
+        <form>
+        <input id="subject" type="text" placeholder="Message subject" required/>
+        <input type="email" placeholder="Valid Email" required/>
+        <input id="sincerely" type="text" placeholder="Sincerely" required />
+        <textarea id="message" placeholder="Write Your Message"></textarea>
+        <button onclick="sendEmail()" class="sending-message" type="submit">Send Massage</button>
+        </form>
+        </div>
+    </div>
+
       <header>Contact Me</header>
       <p>Email: khulekanikhethanic@gmail.com</p>
       <p>Phone: 076 299 2174</p>
@@ -981,7 +1447,7 @@
       <a href="https://WhatsApp.com/khulekan Cebekhulu" target="_blank" class="social-icon">
         <img src="WhatsApp.png" alt="Whatsapp">
       </a>
-      <a href="https://khulekanikhethanic@gmail.com" target="_blank" class="social-icon">
+      <a href="mailto:khulekanikhethanic@gmail.com" target="_blank" class="social-icon">
         <img src="Gmail.png" alt="gmail">
       </a>
 
@@ -989,13 +1455,16 @@
   </main>
 
   <footer>
-    Developed by Khulekani Cebekhulu, Electrical Engineering Graduate
+    Copyright @2024:Developed by Khulekani Cebekhulu, Electrical Engineering Graduate
   </footer>
-
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
+  
     const navbar = document.getElementById('navbar');
     const projectHeadings = document.getElementById('projectheading');
-    const codesnippet = document.getElementById('codesnippet');
+
+   
+
     let isProjectTitleDisplayed = true;
     projectHeadings.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1015,26 +1484,28 @@
                 document.body.style.backgroundColor = 'black';
                 document.body.style.color = 'white';
                 document.getElementById('top-navbar').style.backgroundColor = 'green';
-                codesnippet.style.color = 'black';
+                
             } else {
-                document.body.style.backgroundColor = 'white';
+                document.body.style.backgroundColor = '#0a192f';
                 document.getElementById('top-navbar').style.backgroundColor = 'purple';
-                document.body.style.color = 'black';
+                document.body.style.color = 'white';
 
             }
         });
 
-    document.getElementById('next-button').addEventListener('click', function () {
-      document.getElementById('welcome').style.display = 'none';
-      document.getElementById('project-list').style.display = 'block';
-       document.getElementById('skills').style.display = 'none';
+        
+
+       document.getElementById('next-button').addEventListener('click', function () {
+       document.getElementById('welcome').style.display = 'none';
+       document.getElementById('project-list').style.display = 'block';
+       document.getElementById('Skills').style.display = 'none';
        document.getElementById('skills2').style.display = 'none';
     });
 
     document.getElementById('back-button').addEventListener('click', function () {
       document.getElementById('project-list').style.display = 'none';
       document.getElementById('welcome').style.display = 'block';
-       document.getElementById('skills').style.display = 'block';
+       document.getElementById('Skills').style.display = 'block';
        document.getElementById('skills2').style.display = 'block';
     });
 
@@ -1046,6 +1517,30 @@
         });
       });
     });
+
+    function sendEmail()
+     { 
+      let email = "khulekanikhethanic@gmail.com";
+      var subject = document.getElementById("subject").value; 
+      var message = document.getElementById("message").value; 
+      var sincerely = document.getElementById("sincerely").value; 
+      var mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}%0D%0A%0D%0A Sincerely,%0D%0A${encodeURIComponent(sincerely)}`; 
+      window.location.href = mailtoLink; }
+
+      function hireMe() {
+
+        window.location.href = "mailto:khulekanikhethanic@gmail.com";
+        
+      }
+       
+
+    var typed = new Typed(".loop",{
+    strings : ["A Website developer(IoT based System)"," An Electrical Engineering Graduate(Light Current)"],
+
+    typeSpeed : 150,
+    backSpeed : 150,
+    looped : true
+});
   </script>
 </body>
 
