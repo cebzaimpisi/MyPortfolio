@@ -109,7 +109,7 @@
       #top-navbar {
       display: flex;
       justify-content: center;
-      background-color: green;
+      background-color: #0a192f;
       position: fixed;
       top: 0;
       width: 100%;
@@ -134,17 +134,26 @@
       padding: 14px 14px;
       text-decoration: none;
       font-size: 16px;
+      border-bottom: 2px solid #00FFF5;
     }
 
     #top-navbar ul li a:hover {
       background-color: #1c032c;
       color: white;
       cursor: pointer;
-      text-decoration: underline;
       border-radius: 15px;
     }
   
+    @media screen and (max-width:768px) 
+            {
+              #top-navbar{
+                    flex-direction: column;
+                    text-align: center;
 
+                }
+                
+                
+            }
 
     /* Media Query */
     @media (max-width: 600px) {
@@ -176,16 +185,6 @@
       text-transform: uppercase;
     }
 
-    footer {
-      background-color: green;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
     .contact-info {
       margin-top: 20px;
     }
@@ -206,8 +205,8 @@
         font-size: 16px;
         border: 2px solid black;
         border-radius: 30px;
-        background-color: green;
-        color: white;
+        background-color: #00FFF5;;
+        color: black;
         cursor: pointer;
         width: 100px;
         animation: slideTop 1s ease forwards;
@@ -380,6 +379,7 @@
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+  
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -553,7 +553,7 @@
     font-weight: bold;
     width: 160px;
     height: 50px;
-    background-color:green;
+    background-color:#00FFF5;
     border: none;
     outline: none;
     margin-left: 40px;
@@ -596,6 +596,7 @@
       justify-content: center;
     }
   }
+
   /* ==============Animation Style======== */
 
 @keyframes slideRight {
@@ -785,7 +786,7 @@ header a{
     padding: .5rem 1rem;
 
     transition: .2s ease-in;
-    border-bottom: 2px solid var(--blue);
+    border-bottom: 2px solid blue;
 
     overflow: hidden;
     position: relative;
@@ -804,7 +805,7 @@ header a::before{
 
     transition: .2s ease-in;
     transform: translateX(-101%);
-    background: var(--blue);
+    background: blue;
 }
 
 header a:hover::before{
@@ -814,6 +815,16 @@ header a:hover::before{
 header a:hover{
     color: black;
 }
+
+footer {
+      background-color: #0a192f;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
 
          
@@ -830,7 +841,7 @@ header a:hover{
       <li><a href="#welcome">Welcome</a></li>
       <li><a id="projectheading" href="#projects">Projects</a></li>
       <li><a href="#Skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Contacts</a></li>
       <!-- <li><a href="#contact">Hire me</a></li> -->
     </ul>
   </nav>
@@ -841,16 +852,18 @@ header a:hover{
     <a class="nav-link" href="#Vehicle_Tracking">1.Innovative Vehicle Tracking System</a>
     <a class="nav-link" href="#Wind_Turbine">2.Cooling Fan Speed_Control app</a>
     <a class="nav-link" href="#Contactless_Temperature">3.Contactless Temperature Screening System</a>
-    <a class="nav-link" href="#Weather_App">4.Weather Info App</a>
-    <a class="nav-link" href="#Passenger_Counter">5.Passenger Counter App</a>
-    <a class="nav-link" href="#Circuits_Calculator">6.Electrical Circuits Calculator App</a>
-    <a class="nav-link" href="#Patient_Monitoring">7.Patient Monitoring System</a>
-    <a class="nav-link" href="#JS_Documentation">8.JavaScript Technical Documentation</a>
-    <a class="nav-link" href="#CSS_Colormaker">9.CSS Color Maker</a>
-    <a class="nav-link" href="#water_level">10.Water level indicator</a>
-    <a class="nav-link" href="#survey_form">11.Survey Form</a>
-    <a class="nav-link" href="#Mining_system">12.Mining Workers Health monitoring system</a>
-    <a class="nav-link" href="#weather_dashboard">13.Advanced Weather Dashboard</a>
+    <a class="nav-link" href="#IoT_Meter">4.IOT-Based Eskom Innovative Meter System</a>
+    <a class="nav-link" href="#RFID">5.RFID-Based Smart Medical System</a>
+    <a class="nav-link" href="#Weather_App">6.Weather Info App</a>
+    <a class="nav-link" href="#Passenger_Counter">7.Passenger Counter App</a>
+    <a class="nav-link" href="#Circuits_Calculator">8.Electrical Circuits Calculator App</a>
+    <a class="nav-link" href="#Patient_Monitoring">9.Patient Monitoring System</a>
+    <a class="nav-link" href="#JS_Documentation">10.JavaScript Technical Documentation</a>
+    <a class="nav-link" href="#CSS_Colormaker">11.CSS Color Maker</a>
+    <a class="nav-link" href="#water_level">12.Water level indicator</a>
+    <a class="nav-link" href="#survey_form">13.Survey Form</a>
+    <a class="nav-link" href="#Mining_system">14.Mining Workers Health monitoring system</a>
+    <a class="nav-link" href="#weather_dashboard">15.Advanced Weather Dashboard</a>
   </nav>
 
   <main id="main-doc">
@@ -884,7 +897,9 @@ header a:hover{
         </div>
         
     </div>
-      <button class="button" id="next-button">My Projects <span>&rarr;</span></button>
+         <div class="button">
+           <button class="btn" id="next-button">My Projects</button>
+         </div>
     </section>
 
     <section id="Skills" class="main-section">
@@ -914,7 +929,7 @@ header a:hover{
           <div class="Skill">
               <i class="fas fa-bolt"></i>
               <header>Electrical Design</header>
-              <p>Skilled in creating and testing electrical circuits and systems.</p>
+              <p>Skilled in creating, troubleshooting and testing electrical circuits and systems.</p>
           </div>
 
 <!-- programming skills  section starts --> 
@@ -984,7 +999,7 @@ header a:hover{
 
       <div id="Vehicle_Tracking" class="project">
         <header>1.Innovative Vehicle Tracking System</header>
-        <img src="Vts.jpg" alt="Innovative Vehicle Tracking System" style="width:250px">
+        <img src="Vts.jpg" alt="Innovative Vehicle Tracking System" class="Circuit-image">
         <br>
         <p class="github-heading">User-Friendly Interface:</p>
         <img src="user.jpg" alt="Innovative Vehicle Tracking System" style="width:250px">
@@ -992,8 +1007,8 @@ header a:hover{
         <img src="user1.jpg" alt="Innovative Vehicle Tracking System" style="width:250px">
         <br>
         <p class="github-heading">The integration of a GSM, Bluetooth module HC-06 and a mobile phone as a user interface ensured a 
-user-friendly experience. Users receive updates directly through their mobile devices, fostering easy
-interaction and real-time monitoring.
+         user-friendly experience. Users receive updates directly through their mobile devices, fostering easy
+         interaction and real-time monitoring.
         </p>
         
         <img src="liveetracker.PNG" alt="Innovative Vehicle live Tracking">
@@ -1222,9 +1237,99 @@ interaction and real-time monitoring.
     </div>
   
       <!-- contactles temp ends here -->
+
+      <div id="IoT_Meter" class="project">
+        <header>4.IoT-based Eskom Smart Meter System</header>
+        <img src="IoTMeter.PNG" alt="Meter System">
+      </div>
+     
+
+        <!-- Project 4: Eskom IoT-based Smart Meter System -->
+        <div class="project">
+
+          <p>
+            <h3 class="h3">Project Description</h3>
+            This smart meter integrates an ESP32 with Eskom’s circuit to enable wireless token entry, real-time energy monitoring, and remote validation. It ensures efficient energy usage and secure transactions using a dual-layer approach.
+
+          </p>
+
+          <h3 class="h3">Key Features</h3>
+          <ul>
+              <li>Wireless prepaid token entry with secure CRC-16 validation.</li>
+              <li>Real-time energy consumption logging with voltage, current, and kWh display.</li>
+              <li>Automatic power disconnection on overcurrent detection.</li>
+              <li>UART communication for remote token validation.</li>
+              <li>ThingSpeak integration for cloud-based energy data monitoring.</li>
+              <li>Mobile APP interface for wireless token recharge.</li>
+              
+          </ul>
+
+          <h3 class="h3">Technologies Used</h3>
+          <p><strong>Hardware:</strong> ESP32, ATmega328P, ZMPT101B (voltage sensor), Relay module, ACS712 (current sensor), DS3231 RTC, 4x4 keypad, 20×4 LCD (I2C).
+          </p>
+          <p><strong>Software:</strong>Microchip Studio (Atmel Studio 7), ThingSpeak API, MATLAB IoT for data visualization.
+          </p>
+
+          <p><strong>Programming languages: </strong>C, C++, JavaScript(with HTML and CSS).
+          </p>
+           
+          <p><strong>Implementation & Results: </strong>The system provides real-time energy tracking, ensures token security, and allows remote access for energy management..
+          </p>
+
+          <div class="project-links">
+              <p class="github-heading">Project code can be found through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Weather-web-app/" target="_blank">View on Link</a>
+          </div>
+      </div>
+      <!-- Project 4: Eskom IoT-based Smart Meter System  ends here-->
+
+
+       <!-- Project 5: RFID-Based Medical System-->
+        
+      <div id="RFID" class="project">
+        <header>5.RFID-Based Smart Medical System</header>
+        <img src="emergencydisplay.PNG" alt="RFID System">
+      </div>
+    
+        <div class="project">
+
+          <p>
+            <h3 class="h3">Project Description</h3>
+            This project is designed to improve medical equipment tracking within healthcare facilities. It uses RFID technology to monitor the location of medical devices in critical areas such as ICU, Emergency, Theater, and Pediatrics. The system enhances efficiency by preventing misplacement and ensuring quick access to essential equipment.
+
+          </p>
+
+          <h3 class="h3">Key Features</h3>
+          <ul>
+              <li>RFID-based real-time tracking of medical devices.
+              </li>
+              <li>TFT display with navigation options for ICU, Emergency, Theater, and Pediatrics.</li>
+              <li>LED and buzzer alerts for misplaced or unauthorized equipment movement</li>
+              <li>Data visualization using a virtual terminal and serial monitor for remote access.</li>
+          </ul>
+
+          <h3 class="h3">Technologies Used</h3>
+          <p><strong>Hardware:</strong> Arduino Unos, RFID readers and tags, TFT display, buzzer, LED indicators.
+          </p>
+          <p><strong>Software:</strong>Arduino IDE, Proteus for simulation.
+          </p>
+
+          <p><strong>Programming languages: </strong> C and C++.
+          </p>
+           
+          <p><strong>Implementation & Results: </strong>The system successfully tracks equipment location in different hospital sections, reducing retrieval time and improving asset management.
+          </p>
+
+          <div class="project-links">
+              <p class="github-heading">Project code can be found through this link below:</p>
+              <a href="https://cebzaimpisi.github.io/Weather-web-app/" target="_blank">View on Link</a>
+          </div>
+      </div>
+      <!-- Project 5: RFID-Based Medical System ends here-->
+
       
       <div id="Weather_App" class="project">
-        <header>4.Weather App</header>
+        <header>6.Weather App</header>
         <img src="weatherapp.PNG" alt="Weather App">
       </div>
      
@@ -1247,7 +1352,7 @@ interaction and real-time monitoring.
 
 
       <div id="Passenger_Counter" class="project">
-        <header>5.Passenger Counter App</header>
+        <header>7.Passenger Counter App</header>
         <img src="passangercount.PNG" alt="Passenger Counter App">
       </div>
       
@@ -1269,7 +1374,7 @@ interaction and real-time monitoring.
       </div>
 
       <div id="Circuits_Calculator" class="project">
-        <header>6.Electrical Circuits Calculator App</header>
+        <header>8.Electrical Circuits Calculator App</header>
         <img src="electricalcircuitcalculator.jpg" alt="Electrical Circuits Calculator App" style="width:250px">
       </div>
        <!-- Project:6 Electrical Circuits Calculator App -->
@@ -1300,7 +1405,7 @@ interaction and real-time monitoring.
 
 
       <div id="Patient_Monitoring" class="project">
-        <header>7.Patient Monitoring System</header>
+        <header>9.Patient Monitoring System</header>
         <img src="Patient monitoring.jpg" alt="Patient Monitoring System" style="width:250px">
       </div>
       <!-- Project:7 Patient monitoring system -->
@@ -1319,7 +1424,7 @@ interaction and real-time monitoring.
 
 
       <div id="JS_Documentation" class="project">
-        <header>8.JavaScript Technical Documentation</header>
+        <header>10.JavaScript Technical Documentation</header>
         <img src="Js doc.png" alt="JavaScript Technical Documentation" style="width: 300px;">
       </div>
       
@@ -1341,7 +1446,7 @@ interaction and real-time monitoring.
 
       
       <div id="CSS_Colormaker" class="project">
-        <header>9.CSS Color Maker</header>
+        <header>11.CSS Color Maker</header>
         <img src="cssmaker.PNG" alt="CSS Color Maker">
       </div>
 
@@ -1361,7 +1466,7 @@ interaction and real-time monitoring.
 
 
       <div id="water_level" class="project">
-        <header>10.Water Level Indicator App</header>
+        <header>12.Water Level Indicator App</header>
         <img src="waterlevel.PNG" alt="water level">
       </div>
       
@@ -1386,7 +1491,7 @@ interaction and real-time monitoring.
 
 
       <div id="survey_form" class="project">
-        <header>11.Survey Form</header>
+        <header>13.Survey Form</header>
         <p>Survey Form Web page.</p>
         <img src="Survey form.jpg" alt="survey" style="width: 300px;">
       </div>
@@ -1415,7 +1520,7 @@ interaction and real-time monitoring.
     
 
       <div id="weather_dashboard" class="project">
-        <header>13.Advanced Weather Dashboard App</header>
+        <header>14.Advanced Weather Dashboard App</header>
         <img src="Sign.jpg" alt="sign" style="width: 300px;">
         <img src="Display.jpg" alt="DashboardDisplay" style="width: 300px;">
         <img src="Forecast.jpg" alt="Forecast" style="width: 300px;">
@@ -1451,7 +1556,7 @@ interaction and real-time monitoring.
         <input type="email" placeholder="Valid Email" required/>
         <input id="sincerely" type="text" placeholder="Sincerely" required />
         <textarea id="message" placeholder="Write Your Message"></textarea>
-        <button onclick="sendEmail()" class="sending-message" type="submit">Send Message</button>
+        <button onclick="sendEmail()" class="sending-message" type="submit">Send</button>
         </form>
         </div>
     </div>
@@ -1476,7 +1581,7 @@ interaction and real-time monitoring.
   </main>
 
   <footer>
-    Copyright @2024:Developed by Khulekani Cebekhulu, Electrical Engineering Graduate
+    Copyright @2025:Developed by Khulekani Cebekhulu, Electrical Engineering Graduate
   </footer>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
@@ -1486,13 +1591,17 @@ interaction and real-time monitoring.
 
    
 
-    let isProjectTitleDisplayed = true;
+    let isProjectTitleDisplayed = false;
     projectHeadings.addEventListener('click', (e) => {
       e.preventDefault();
       if(isProjectTitleDisplayed){
         navbar.style.display = 'none';
       }else{
         navbar.style.display = 'block';
+        document.getElementById('welcome').style.display = 'none';
+        document.getElementById('project-list').style.display = 'block';
+        document.getElementById('Skills').style.display = 'none';
+        document.getElementById('skills2').style.display = 'none';
       }
       isProjectTitleDisplayed =!isProjectTitleDisplayed;
     });
@@ -1504,7 +1613,7 @@ interaction and real-time monitoring.
             if (this.checked) {
                 document.body.style.backgroundColor = 'purple';
                 document.body.style.color = 'white';
-                document.getElementById('top-navbar').style.backgroundColor = 'green';
+                document.getElementById('top-navbar').style.backgroundColor = '#0a192f';
                 
             } else {
                 document.body.style.backgroundColor = '#0a192f';
@@ -1556,7 +1665,7 @@ interaction and real-time monitoring.
        
 
     var typed = new Typed(".loop",{
-    strings : ["A Website developer(IoT based System)"," An Electrical Engineering Graduate(Light Current)"],
+    strings : [" An Electrical Engineering Graduate(Light Current)"],
 
     typeSpeed : 150,
     backSpeed : 150,
