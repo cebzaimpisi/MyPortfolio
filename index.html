@@ -146,11 +146,30 @@
   
     @media screen and (max-width:768px) 
             {
-              #top-navbar{
-                    flex-direction: column;
-                    text-align: center;
-
+              #top-navbar ul li a {
+              display: inline-block;
+              color: white;
+              text-align: center;
+              padding: 10px 10px;
+              text-decoration: none;
+              font-size: 13px;
+              border-bottom: 2px solid #00FFF5;
+    
                 }
+
+                .contact {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+
+              }
+              body{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                margin: auto;
+              }
                 
                 
             }
@@ -159,10 +178,13 @@
     @media (max-width: 600px) {
       #navbar {
         position: relative;
-        width: 100%;
+        width: 80%;
         height: auto;
         overflow: scroll;
+        display: none;
+        
       }
+      
       #navbar ul li a:hover {
       background-color: #1c032c;
       color: white;
@@ -215,6 +237,24 @@
 
     }
     button:hover{
+      scale:1.1;
+      filter: drop-shadow(0px 0px 7px white);
+    }
+    .button_send{
+      margin: auto;
+        padding: 10px;
+        font-size: 13px;
+        border: 2px solid black;
+        border-radius: 30px;
+        background-color: #00FFF5;;
+        color: black;
+        cursor: pointer;
+        animation: slideTop 1s ease forwards;
+        filter: drop-shadow(0px 0px 10px  black);
+        transition: .4s;
+
+    }
+    .button_send:hover{
       scale:1.1;
       filter: drop-shadow(0px 0px 7px white);
     }
@@ -700,18 +740,18 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-padding-bottom: 80px;
+
 }
 
 .contact h1{
   color: #fff;
-  font-size: 30px;
+ 
   font-weight: bold;
   text-align: center;
 }
 .message h2{
   color: #fff;
-  font-size: 30px;
+ 
   font-weight: bold;
   text-align: center;
 }
@@ -902,17 +942,39 @@ footer {
          </div>
     </section>
 
-    <section id="Skills" class="main-section">
-      <header>Key Skills</header>
-      <ul>
-      <li>Computer Literacy</li>
-      <li>Web development</li>
-      <li>Teamwork and communication</li>
-      <li>Problem solving and analytical skills</li>
-      <li>Leadership and time management skills</li>
-      <li>Software(Home Grid)</li>
+     <section id="Skills" class="main-section">
+    <header>Technical Skills</header>
+    <ul>
+        <li>Circuit Design & Analysis</li>
+        <li>Embedded Systems Development (ESP32, Arduino, AVR, PIC)</li>
+        <li>Programming (C, C++, Python, JavaScript, HTML and CSS)</li>
+        <li>PCB Design & Simulation (Proteus)</li>
+        <li>IoT & Wireless Communication (ESP32(Wifi), Bluetooth, LoRa, ThingSpeak and Things.io)</li>
+        <li>Power Electronics (Rectifiers, Inverters, Motor Controllers)</li>
+        <li>Sensors & Actuators (wide range of sensors)</li>
+        <li>GUI & Display Interfaces (LCDs, TFT LCDs, LVGL GUI, Oled and Nokia5310 display)</li>
+        <li>Industrial Communication (UART, SPI, I2C, Modbus)</li>
+        <li>MATLAB & IoT Data Visualization</li>
     </ul>
-    </section>
+
+    <header>Software Skills</header>
+    <ul>
+        <li>Proteus - Circuit simulation & PCB design</li>
+        <li>Microchip Studio (Atmel Studio 7) - Embedded programming</li>
+        <li>Arduino IDE & Thonny - Microcontroller development</li>
+        <li>Visual Studio Code - Web development & embedded systems coding</li>
+        <li>MATLAB - Data analysis & IoT integration</li>
+    </ul>
+
+    <header>Soft Skills</header>
+    <ul>
+        <li>Problem-Solving & Analytical Thinking</li>
+        <li>Project Management</li>
+        <li>Teamwork & Collaboration</li>
+        <li>Communication Skills (Technical Documentation & Presentations)</li>
+        <li>Adaptability & Quick Learning</li>
+    </ul>
+</section>
 
     <section id="skills2" class="main-section">
       <div class="Skills">
@@ -934,7 +996,7 @@ footer {
 
 <!-- programming skills  section starts --> 
           <div class="skills" id="skill">
-            <header>Programming Skills</header>
+            <header style="font-size: large;">Programming Skills</header>
             
             <div class="skills-main">
               <div class="skill">
@@ -1242,6 +1304,11 @@ footer {
         <header>4.IoT-based Eskom Smart Meter System</header>
         <img src="IoTMeter.PNG" alt="Meter System">
       </div>
+      <div>
+        <h3 class="h3">System Functionality Demo</h3>
+        <img src="New/tokenrecharge.jpeg" alt="Meter System" style="width: 300px">
+        <img src="New/sytemdemo.png" alt="Meter System" style="width: 300px">
+      </div>
      
 
         <!-- Project 4: Eskom IoT-based Smart Meter System -->
@@ -1278,7 +1345,7 @@ footer {
 
           <div class="project-links">
               <p class="github-heading">Project code can be found through this link below:</p>
-              <a href="https://cebzaimpisi.github.io/Weather-web-app/" target="_blank">View on Link</a>
+              <a href="https://github.com/cebzaimpisi/IoT-BasedInnovativeEskomMeter.git" target="_blank">View on Link</a>
           </div>
       </div>
       <!-- Project 4: Eskom IoT-based Smart Meter System  ends here-->
@@ -1322,7 +1389,7 @@ footer {
 
           <div class="project-links">
               <p class="github-heading">Project code can be found through this link below:</p>
-              <a href="https://cebzaimpisi.github.io/Weather-web-app/" target="_blank">View on Link</a>
+              <a href="https://github.com/cebzaimpisi/MyRFIDProject.git" target="_blank">View on Link</a>
           </div>
       </div>
       <!-- Project 5: RFID-Based Medical System ends here-->
@@ -1556,7 +1623,7 @@ footer {
         <input type="email" placeholder="Valid Email" required/>
         <input id="sincerely" type="text" placeholder="Sincerely" required />
         <textarea id="message" placeholder="Write Your Message"></textarea>
-        <button onclick="sendEmail()" class="sending-message" type="submit">Send</button>
+        <button class="button_send" onclick="sendEmail()" class="sending-message" type="submit">Send</button>
         </form>
         </div>
     </div>
@@ -1611,7 +1678,7 @@ footer {
         
         toggleSwitch.addEventListener('change', function() {
             if (this.checked) {
-                document.body.style.backgroundColor = 'purple';
+                document.body.style.backgroundColor = '#121212';
                 document.body.style.color = 'white';
                 document.getElementById('top-navbar').style.backgroundColor = '#0a192f';
                 
